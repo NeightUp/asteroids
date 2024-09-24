@@ -1,8 +1,10 @@
 import pygame
+import sys
 from constants import *
 from player import *
 from astroid import *
 from astroidfield import *
+from circleshape import *
 
 def main():
     pygame.init()
@@ -29,6 +31,10 @@ def main():
             u.update(dt)
 
         screen.fill("black")
+        for a in astroids:
+            if a.collision(ship):
+                print("Game over!")
+                sys.exit()
 
         for d in drawable:
             d.draw(screen)
