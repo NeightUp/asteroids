@@ -4,7 +4,6 @@ from constants import *
 from player import *
 from astroid import *
 from astroidfield import *
-from circleshape import *
 
 def main():
     pygame.init()
