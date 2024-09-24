@@ -4,6 +4,7 @@ from constants import *
 from player import *
 from astroid import *
 from astroidfield import *
+from shot import *
 
 def main():
     pygame.init()
@@ -14,13 +15,16 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     astroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
     Player.containers = (updatable, drawable)
     Astroid.containers = (updatable, drawable, astroids)
     AsteroidField.containers = updatable
+    Shot.containers = (updatable, drawable, shots)
+    
 
     ship = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     af = AsteroidField()
-
+     
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
