@@ -20,11 +20,10 @@ def main():
     Astroid.containers = (updatable, drawable, astroids)
     AsteroidField.containers = updatable
     Shot.containers = (updatable, drawable, shots)
-    
 
     ship = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     af = AsteroidField()
-     
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
