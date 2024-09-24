@@ -37,7 +37,11 @@ def main():
             if a.collision(ship):
                 print("Game over!")
                 sys.exit()
-
+            for b in shots:
+                if a.collision(b):
+                    a.split()
+                    b.kill()
+                    
         for d in drawable:
             d.draw(screen)
 
